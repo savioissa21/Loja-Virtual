@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loja Bloco Desande</title>
+    <link rel="stylesheet" href="./css/estilo.css" />
+    <script src="javascript/script.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="entrada"></div>
+    <header>
+      <div class="logo">
+        <img src="img/logo.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+        </ul>
+      </nav>
+      <a href="#" onclick="toggleCarrinho()" id="carrinho-conteudo">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+      <div id="carrinho" class="carrinho-suspenso">
+        <h3>Seu Carrinho</h3>
+        <div id="itens-carrinho"></div>
+        <p id="total">Total: R$ 0,00</p>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+      </div>
+    </header>
+    <section>
+      <div class="info">
+        <h2>Produtos</h2>
+      </div>
+      <div class="produtos">
+        <div class="produto">
+          <figure class="foto-camisa">
+            <img
+              src="img/camisa-frente.jpg"
+              alt="Camisa Frente"
+              class="imagem-padrao"
+            />
+            <img
+              src="img/camisa-verso.jpg"
+              alt="Camisa Verso"
+              class="imagem-padrao"
+            />
+          </figure>
+          <p>Camisa Oficial arregata Bloco do Desande</p>
+          <p><b>R$60.00</b></p>
+          <p>Tamanhos: <b>P,M,G,GG,XGG</b></p>
+          <button onclick="adicionarAoCarrinho('Camiseta', 60.00)">
+            Comprar
+          </button>
+        </div>
+        <div class="produto">
+          <figure class="foto-produto">
+            <img
+              src="img/DALL_E_2024-10-18_08.33.25_-_Design_a_tall_black_metal_mug_with_a_rustic__hand-lettered_style_typography_saying__BLOCO_DO_DESANDE__in_white._The_mug_has_a_silver_carabiner_attache-removebg-preview.png"
+              alt="Caneca"
+              class="imagem-padrao"
+            />
+          </figure>
+          <p>Caneca Oficial Bloco do Desande</p>
+          <p><b>R$35,00</b></p>
+          <button onclick="adicionarAoCarrinho('Caneca', 35.00)">
+            Comprar
+          </button>
+        </div>
+        <div class="produto">
+          <figure class="foto-produto">
+            <img
+              src="img/combo-vodka.png"
+              alt="Combo de Vodka"
+              class="imagem-padrao"
+            />
+          </figure>
+          <p>Combo vodka com energia</p>
+          <p><b>R$120,00</b></p>
+          <button onclick="adicionarAoCarrinho('Combo Vodka', 120.00)">
+            Comprar
+          </button>
+        </div>
+        <div class="produto">
+          <figure class="foto-produto">
+            <img
+              src="img/combo-whisky.jpg"
+              alt="Combo de Whisky"
+              class="imagem-padrao"
+            />
+          </figure>
+          <p>Combo whisky com energia</p>
+          <p><b>R$180,00</b></p>
+          <button onclick="adicionarAoCarrinho('Combo Whisky', 180.00)">
+            Comprar
+          </button>
+        </div>
+      </div>
+    </section>
+    <div class="info">
+      <h2>Ingressos</h2>
+    </div>
+    <section class="ingressos">
+      <div class="produto">
+        <figure class="folder">
+          <img src="img/pos-carnval.jpg" alt="Pós carnaval" />
+        </figure>
+        <p>Ingresso Pós carnaval</p>
+        <p>Local: Área Corsino</p>
+        <p>Valor : <b>R$20,00</b></p>
+        <button onclick="adicionarAoCarrinho('Pós Carnaval', 20.00)">
+          Comprar
+        </button>
+      </div>
+      <div class="produto">
+        <figure class="folder">
+          <img
+            src="img/mixfimdeferias.jpg"
+            alt="Mix fim de férias"
+            class="imagem-padrao"
+          />
+        </figure>
+        <p>Ingresso Mix fim de Férias</p>
+        <p>Local: Orla Mix</p>
+        <p>Valor:<b>R$25,00</b></p>
+        <button onclick="adicionarAoCarrinho('Mix fim de férias', 25.00)">
+          Comprar
+        </button>
+      </div>
+      <div class="produto">
+        <figure class="folder">
+          <img
+            src="img/Imagem do WhatsApp de 2024-08-24 à(s) 10.25.31_3585c828.jpg"
+            alt="Noite do Desande"
+            class="imagem-padrao"
+          />
+        </figure>
+        <p>Ingresso Noite do Desande</p>
+        <p>Local: Orla Mix</p>
+        <p>Valor: <b>R$30,00</b></p>
+        <button onclick="adicionarAoCarrinho('Noite do Desande', 30.00)">
+          Comprar
+        </button>
+      </div>
+      <div class="produto">
+        <figure class="folder">
+          <img
+            src="img/Halloween.jpg"
+            alt="Halloween do Terceirão"
+            class="imagem-padrao"
+          />
+        </figure>
+        <p>Ingresso Halloween do Terceirão</p>
+        <p>Local: Ginásio Samuel Soares</p>
+        <p>Valor: <b>R$35,00</b></p>
+        <button onclick="adicionarAoCarrinho('Halloween do Terceirão', 35.00)">
+          Comprar
+        </button>
+      </div>
+    </section>
+    <footer id="main-footer">
+      <section id="contato">
+        <h2 class="Info">Conheça nossas redes sociais</h2>
+        <div class="redes-sociais">
+          <a
+            href="https://www.instagram.com/bloco_do_desande_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://chat.whatsapp.com/Lm17m24p3l3CYMf3pqCYSi"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </a>
+          <a
+            href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMVxbwxSxDpgPDSCKHPtpMkRcMqhxpSPdqhsjRVxlHvlPCFMNmtlRjHLmzDdcpqLkFRldGg"
+            target="_blank"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </section>
+      <div class="footer-container">
+        <div class="institucional">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#">Nossas lojas</a></li>
+            <li><a href="#">Sobre nós</a></li>
+            <li><a href="#">Seja um franqueado</a></li>
+            <li><a href="#">Seja nosso parceiro</a></li>
+            <li><a href="#">Trabalhe conosco</a></li>
+            <li><a href="#">Fornecedores</a></li>
+            <li><a href="#">Sustentabilidade</a></li>
+            <li><a href="#">Melhor sexta-feira</a></li>
+          </ul>
+        </div>
+        <div class="suporte">
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Entre em contato</a></li>
+            <li><a href="#">Trocas e devoluções</a></li>
+            <li><a href="#">Política de privacidade</a></li>
+            <li><a href="#">Política de cookies</a></li>
+          </ul>
+        </div>
+        <div class="pagamentos">
+          <h4>Meios de pagamento</h4>
+          <div class="payment-icons">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-amex"></i>
+            <i class="fab fa-cc-diners-club"></i>
+            <i class="fab fa-cc-elo"></i>
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+        </div>
+      </div>
+      <p>© 2024 Sávio Issa de Sousa. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
